@@ -1,1 +1,1 @@
-npx cypress run --browser chrome --config-file cypress/e2e/app.cy.js
+npx cypress run --browser chrome --spec ./cypress/e2e/app.cy.js
