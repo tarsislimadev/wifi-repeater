@@ -1,0 +1,7 @@
+{
+  "name": "wifi-repeater",
+  "version": "0.1.0",
+  "devDependencies": {
+    "cypress": "^13.13.1"
+  }
+}
