@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: cypress tests
 
 on: 
   push:
@@ -6,20 +6,12 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false 
-      matrix:
-        containers: [1, 2] 
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v4
-      - name: Cypress run
+      - name: cypress run
         uses: cypress-io/github-action@v6
         with:
-          start: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
-          wait-on: 'http://localhost:3000' 
           record: true
-          parallel: true 
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
